@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/ubuntu_light_24.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/ubuntu_48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://game/return_to_title.gd" type="Script" id=4]
+
+[node name="Play" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scene" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+scale = Vector2( 0.666667, 0.666667 )
+
+[node name="scene" type="Sprite" parent="scene"]
+position = Vector2( -28.2971, -25.5661 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 314.0
+margin_top = 313.0
+margin_right = 965.0
+margin_bottom = 406.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 651.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 5
+text = "PLACEHOLDER PLAY SCENE"
+valign = 1
+percent_visible = -0.05
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 59.0
+margin_right = 651.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
